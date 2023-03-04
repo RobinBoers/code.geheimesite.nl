@@ -3,30 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://docs.geheimesite.nl/ghme.css/ghme.css"
+      type="text/css"
+    />
+
     <title>Robin Boers</title>
     <style>
-      body,
-      html {
-        margin: 0;
-        font-family: sans-serif;
-        background-color: midnightblue;
-        color: white;
-        font-weight: bold !important;
+      :root {
+        --background: 25, 25, 112;
+        --foreground: 255, 255, 255;
+        --primary: 255, 255, 255;
+
+        --max-content-width: 1400px;
+        --max-text-width: 1100px;
+
+        --font-headings: var(--font-sans);
+        --font-subheadings: var(--font-sans);
+        --font-display: var(--font-sans);
+        --font-content: sans-serif, var(--font-sans);
       }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
+
+      body {
         font-weight: bold !important;
+        font-size: 0.8rem;
       }
-      .content {
-        margin: auto;
+
+      header {
+        max-width: var(--max-content-width);
+        margin: 0 auto;
         margin-top: 30px;
-        width: 75%;
       }
+
       ul {
         margin: 0;
         padding: 0;
@@ -46,212 +55,142 @@
       nav ul li.selected {
         font-weight: bolder;
       }
-      .grid {
-        display: grid;
-        gap: 20px;
-      }
-      .grid-item {
-        position: relative;
-      }
-      .grid-item img {
-        width: 100%;
-        aspect-ratio: 16/9;
-        object-fit: cover;
-      }
-      @media screen and (min-width: 700px) {
-        .grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media screen and (min-width: 1000px) {
-        .grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-      @media screen and (min-width: 1300px) {
-        .grid {
-          grid-template-columns: repeat(4, 1fr);
-        }
-      }
-      @media screen and (min-width: 1600px) {
-        .grid {
-          grid-template-columns: repeat(5, 1fr);
-        }
-      }
-
-      p {
-        margin-bottom: 70px;
-      }
 
       h1 {
         margin-top: 30px;
       }
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      .list-grid {
+        margin-top: 2em;
+      }
+
+      .list-grid h3 {
+        font-size: 100% !important;
+      }
+
+      img {
+        aspect-ratio: 9/4;
+        height: auto;
+        object-fit: cover;
+      }
     </style>
   </head>
   <body>
-    <div class="content">
-      <header>
-        <nav>
-          <ul>
-            <li><a href="https://geheimesite.nl">Home</a></li>
-            <li class="selected">Beta projects</li>
-            <li><a href="https://blog.geheimesite.nl">Blog</a></li>
-            <li><a href="https://github.com/RobinBoers">GitHub</a></li>
-            <li>
-              <a href="https://geheimesite.nl/projecten">Other projects</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <h1>Hi!</h1>
-        <p>
-          Hello, I'm Robin. This part of my website contains documentation for
-          my projects, stuff I'm testing, web dev tools, and other projects that
-          don't have a permanent home yet. I also host some sites for friends
-          here. If you want to know more about me or my projects, consider
-          checking out my <a href="https://geheimesite.nl">main site</a>.
-        </p>
+    </article>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="https://geheimesite.nl">Home</a></li>
+          <li class="selected">Beta projects</li>
+          <li><a href="https://blog.geheimesite.nl">Blog</a></li>
+          <li><a href="https://github.com/RobinBoers">GitHub</a></li>
+          <li>
+            <a href="https://geheimesite.nl/projecten">Other projects</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Hi!</h1>
+      <p>
+        Hello, I'm Robin. This part of my website contains documentation for my
+        projects, stuff I'm testing, web dev tools, and other projects that
+        don't have a permanent home yet. I also host some sites for friends
+        here. If you want to know more about me or my projects, consider
+        checking out my
+        <a href="https://geheimesite.nl">main site</a>.
+      </p>
 
-        <h3>Currently here:</h3>
+      <h2>Currently here:</h2>
 
-        <section class="grid">
-          <div class="grid-item">
-            <a href="tools/"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                webdev-tools
-              </div>
-              <img
-                src="https://via.placeholder.com/960x480.png?text=Click%20to%20open"
-                alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="beta/mclassic.js/"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                js0.23-improved
-              </div>
-              <img
-                src="https://raw.githubusercontent.com/RobinBoers/js0.23-improved/master/screenshot.png"
-                alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="beta/Platformed/"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                Platformed
-              </div>
-              <img
-                src="images/projects/platformgame.png"
-                alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="demo/tablegenerator/"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                tablegenerator
-              </div>
-              <img
-                src="https://via.placeholder.com/960x480.png?text=Click%20to%20open"
-                alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="beta/NinjaDO/singleplayer/"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                NinjaDO (singleplayer)
-              </div>
-              <img src="images/projects/ninjado1.png" alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="beta/nibor"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                Nibor Virtual Assistant
-              </div>
-              <img src="images/projects/nibor.png" alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="beta/bloggr"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                BloggrAPP
-              </div>
-              <img src="images/projects/bloggrAPP.png" alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="demo/DragAndDrop/"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                HTML Drag & Drop Demo
-              </div>
-              <img src="images/projects/DandD.png" alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="https://nindo.geheimesite.nl/"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                NindoPhx
-              </div>
-              <img
-                src="https://raw.githubusercontent.com/RobinBoers/nindo-phx/master/screenshot.png"
-                alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="https://chat.geheimesite.nl/"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                ThinkChat
-              </div>
-              <img
-                src="https://raw.githubusercontent.com/RobinBoers/thinkchat/main/screenshot.png"
-                alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="http://docs.geheimesite.nl/SkyLight-themelibrary/"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                SkyLight themes
-              </div>
-              <img
-                src="https://raw.githubusercontent.com/RobinBoers/SkyLight-Website-Editor/master/screenshot.png"
-                alt="..."
-            /></a>
-          </div>
-        </section>
+      <ul class="list-grid">
+        <li>
+          <h3>webdev-tools</h3>
+          <a href="tools/">
+            <img
+              src="https://via.placeholder.com/960x480.png?text=Click%20to%20open"
+              alt="..."
+          /></a>
+        </li>
+        <li>
+          <h3>js0.23-improved</h3>
+          <a href="beta/mclassic.js/">
+            <img
+              src="https://raw.githubusercontent.com/RobinBoers/js0.23-improved/master/screenshot.png"
+              alt="..."
+          /></a>
+        </li>
+        <li>
+          <h3>tablegenerator</h3>
+          <a href="demo/tablegenerator/">
+            <img
+              src="https://via.placeholder.com/960x480.png?text=Click%20to%20open"
+              alt="..."
+          /></a>
+        </li>
+        <li>
+          <h3>NinjaDO (singleplayer)</h3>
+          <a href="beta/NinjaDO/singleplayer/">
+            <img src="images/projects/ninjado1.png" alt="..."
+          /></a>
+        </li>
+        <li>
+          <h3>NindoPhx</h3>
+          <a href="https://nindo.geheimesite.nl/">
+            <img
+              src="https://raw.githubusercontent.com/RobinBoers/nindo-phx/master/screenshot.png"
+              alt="..."
+          /></a>
+        </li>
+        <li>
+          <h3>ThinkChat</h3>
+          <a href="https://chat.geheimesite.nl/">
+            <img
+              src="https://raw.githubusercontent.com/RobinBoers/thinkchat/main/screenshot.png"
+              alt="..."
+          /></a>
+        </li>
+        <li>
+          <h3>SkyLight themes</h3>
+          <a href="http://docs.geheimesite.nl/SkyLight-themelibrary/">
+            <img
+              src="https://raw.githubusercontent.com/RobinBoers/SkyLight-Website-Editor/master/screenshot.png"
+              alt="..."
+          /></a>
+        </li>
+      </ul>
 
-        <h3>Documentation</h3>
-        <section class="grid">
-          <div class="grid-item">
-            <a href="https://docs.geheimesite.nl/nindo-phx"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                nindo-phx
-              </div>
-              <img
-                src="https://raw.githubusercontent.com/RobinBoers/nindo-phx/master/screenshot.png"
-                alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="https://docs.geheimesite.nl/nindo-elixir"
-              ><div class="w3-display-topleft w3-black w3-padding">
-                nindo-elixir
-              </div>
-              <img
-                src="https://raw.githubusercontent.com/RobinBoers/nindo-elixir/master/screenshot.png"
-                alt="..."
-            /></a>
-          </div>
-          <div class="grid-item">
-            <a href="https://docs.geheimesite.nl/school"
-              ><div class="w3-display-topleft w3-black w3-padding">school</div>
-              <img
-                src="https://via.placeholder.com/960x480.png?text=Click%20to%20open"
-                alt="..."
-            /></a>
-          </div>
-        </section>
-      </main>
-    </div>
+      <h2>Documentation</h2>
+      <ul class="list-grid">
+        <li>
+          <h3>nindo-phx</h3>
+          <a href="https://docs.geheimesite.nl/nindo-phx">
+            <img
+              src="https://raw.githubusercontent.com/RobinBoers/nindo-phx/master/screenshot.png"
+              alt="..."
+          /></a>
+        </li>
+        <li>
+          <h3>nindo-elixir</h3>
+          <a href="https://docs.geheimesite.nl/nindo-elixir">
+            <img
+              src="https://raw.githubusercontent.com/RobinBoers/nindo-elixir/master/screenshot.png"
+              alt="..."
+          /></a>
+        </li>
+        <li>
+          <h3>school</h3>
+          <a href="https://docs.geheimesite.nl/school">
+            <img
+              src="https://via.placeholder.com/960x480.png?text=Click%20to%20open"
+              alt="..."
+          /></a>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>
