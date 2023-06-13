@@ -25,29 +25,23 @@
         --font-content: sans-serif, var(--font-sans);
       }
 
-      body {
-        font-weight: bold !important;
-        font-size: 0.8rem;
-      }
-
-      header {
-        max-width: var(--max-content-width);
-        margin: 0 auto;
-        margin-top: 30px;
-      }
-
-      ul {
-        margin: 0;
-        padding: 0;
-      }
-      nav ul li {
-        display: inline;
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3em;
+        align-items: center;
         list-style: none;
-        padding-right: 30px;
+        margin: 0;
+        margin-top: 2em;
+        padding: 0;
       }
       a {
         color: white;
         text-decoration: underline;
+      }
+      a:hover {
+        color: rgb(var(--background));
       }
       nav ul li a {
         text-decoration: none;
@@ -56,27 +50,11 @@
         font-weight: bolder;
       }
 
-      h1 {
-        margin-top: 30px;
-      }
-
-      h2 {
-        margin-bottom: 0;
-      }
-
-      .list-grid {
-        margin-top: 2em;
-      }
-
-      .list-grid h3 {
-        font-size: 100% !important;
-      }
-
       img {
-        aspect-ratio: 9/4;
+        aspect-ratio: 9/5;
         height: auto;
         object-fit: cover;
-      }
+      } 
     </style>
   </head>
   <body>
@@ -95,17 +73,19 @@
       </nav>
     </header>
     <main>
-      <h1>Hi!</h1>
-      <p>
-        Hello, I'm Robin. This part of my website contains documentation for my
-        projects, stuff I'm testing, web dev tools, and other projects that
-        don't have a permanent home yet. I also host some sites for friends
-        here. If you want to know more about me or my projects, consider
-        checking out my
-        <a href="https://geheimesite.nl">main site</a>.
-      </p>
+      <section>
+        <h1>Hi!</h1>
+        <p>
+          Hello, I'm Robin. This part of my website contains documentation for my
+          projects, stuff I'm testing, web dev tools, and other projects that
+          don't have a permanent home yet. I also host some sites for friends
+          here. If you want to know more about me or my projects, consider
+          checking out my
+          <a href="https://geheimesite.nl">main site</a>.
+        </p>
+      </section>
 
-      <h2>Currently here:</h2>
+      <h2 class="section">Currently here:</h2>
 
       <ul class="list-grid">
         <li>
@@ -164,7 +144,7 @@
         </li>
       </ul>
 
-      <h2>Documentation</h2>
+      <h2 class="section">Documentation</h2>
       <ul class="list-grid">
         <li>
           <h3>nindo-phx</h3>
