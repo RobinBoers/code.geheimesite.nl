@@ -1,3 +1,42 @@
+# Preserve bandwidth for PHP enabled servers
+<ifmodule mod_php4.c>
+	php_value zlib.output_compression 16386
+</ifmodule>
+
+# Google, FLoC off! (and other privacy headers)
+Header set Permissions-Policy "interest-cohort=()"
+Header set Referrer-Policy "no-referrer"
+Header set X-Content-Type-Options "nosniff"
+
+# Force https (disabled, see 1mb.club)
+#RewriteCond %{HTTPS} off 
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Add expire headers (prevents hotlinking)
+<FilesMatch "\.(ico|jpg|jpeg|png|webp|gif|js|css|swf)$">
+	Header set Expires "access plus 1 day"
+</FilesMatch>
+
+# File cache for static assets and images
+<FilesMatch "\.(ico|jpg|jpeg|png|webp|gif|svg|woff|woff2)$">
+	Header set Cache-Control "max-age=31536000"
+</FilesMatch>
+
+# Cache css and javascript files for one week
+<FilesMatch ".(js|css|pdf|txt)$">
+	Header set Cache-Control "max-age=604800"
+</FilesMatch>
+
+# Cache html and php files for one day
+<FilesMatch "\.(html|php)$">
+	Header set Cache-Control "max-age=43200"
+</FilesMatch>
+
+# Explicitly disable caching for scripts and other dynamic files
+<FilesMatch "\.(pl|cgi|spl|scgi|fcgi)$">
+	Header unset Cache-Control
+</FilesMatch>
+
 # Cool URLs don't change. Ugh.
 
 # Static assets
@@ -8,3 +47,23 @@ Redirect 301 /mr https://hosted-at.geheimesite.nl/mr
 Redirect 301 /beta/cutie-tanks https://demo.geheimesite.nl/cutie-tanks
 Redirect 301 /beta/mclassic.js https://demo.geheimesite.nl/js0.23-improved
 Redirect 301 /beta/NinjaDO https://demo.geheimesite.nl/NinjaDO
+
+# GZip compression
+<IfModule mod_deflate.c>
+    <FilesMatch "\.(js|css|html|htm|php|xml|opml)$">
+        SetOutputFilter DEFLATE
+    </FilesMatch>
+	
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
+
+# Disable the server signature
+ServerSignature Off
+
+# Limit file uploads to 100K
+LimitRequestBody 102400
+
+# Follow symbolic links
+Options +FollowSymLinks
