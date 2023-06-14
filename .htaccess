@@ -1,0 +1,10 @@
+# Cool URLs don't change. Ugh.
+
+# Static assets
+Redirect 301 /css https://hosted-at.geheimesite.nl/css
+Redirect 301 /mr https://hosted-at.geheimesite.nl/mr
+
+# Live demos
+Redirect 301 /beta/cutie-tanks https://demo.geheimesite.nl/cutie-tanks
+Redirect 301 /beta/mclassic.js https://demo.geheimesite.nl/js0.23-improved
+Redirect 301 /beta/NinjaDO https://demo.geheimesite.nl/NinjaDO
